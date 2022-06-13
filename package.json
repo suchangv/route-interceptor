@@ -1,0 +1,17 @@
+{
+  "name": "@suchangv/route-interceptor",
+  "version": "1.0.0",
+  "description": "A front-end generic route interceptor",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "React",
+    "Vue",
+    "Router",
+    "Interceptor"
+  ],
+  "author": "suchangv",
+  "license": "MIT"
+}
