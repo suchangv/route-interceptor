@@ -3,8 +3,18 @@
   "version": "1.0.0",
   "description": "A front-end generic route interceptor",
   "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "tsc"
+    "start": "tsc -w",
+    "build": "tsc",
+    "demo:cra": "cd demo/cra && npm start"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.3"
   },
   "keywords": [
     "React",
