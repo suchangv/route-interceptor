@@ -1,6 +1,6 @@
 {
   "name": "@suchangv/route-interceptor",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A front-end generic route interceptor",
   "main": "dist/index.js",
   "module": "dist/index.js",
