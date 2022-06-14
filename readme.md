@@ -11,13 +11,13 @@ todo
 
 ## How to use
 
-1. Installation
+### 1. Installation
 
 ```shell
   npm i @suchangv/route-interceptor --save
 ```
 
-2. Add this code where you like
+### 2. Add this code where you like
 
 ```javascript
 import { create } from "@suchangv/route-interceptor";
@@ -41,23 +41,23 @@ interceptor.start();
 
 ### way
 
-- a
+#### - a
 
   Intercept Anchor tag jump, if Anchor tag has click event and called preventDefault, Will not be intercepted.
 
-- window.open
+#### - window.open
 
   Intercept window.open
 
-- history
+#### - history
 
   Will both intercept history.pushState and history.replaceState
 
-- hash
+#### - hash
 
   Intercept hash change, such as `location.hash = '#some'`
 
-- location
+#### - location
 
   Because the origin location object can't be override, if you want to intercept `set location.href` and `location.replace`, You need to use Babel at the same time.
 
