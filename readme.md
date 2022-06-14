@@ -57,7 +57,7 @@ interceptor.start();
 
 - location
 
-  Because of the origin location object can't be override, if you want to intercept `set location.href` and `location.replace`, you need to use babel plugin do this.
+  Because of the origin location object can't be override, if you want to intercept `set location.href` and `location.replace`, You need to use Babel at the same time.
 
   ```javascript
   // .babelrc.js
