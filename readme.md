@@ -14,7 +14,7 @@ todo
 1. Installation
 
 ```shell
-  npm i @suchangv/route-interceptor --save-dev
+  npm i @suchangv/route-interceptor --save
 ```
 
 2. Add this code where you like
