@@ -20,6 +20,8 @@ todo
 2. Add this code where you like
 
 ```javascript
+import { create } from "@suchangv/route-interceptor";
+
 const interceptor = create({
   way: ["a", "window.open", "history", "hash", "location"],
   intercept: (path) => {
