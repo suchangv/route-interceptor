@@ -22,7 +22,11 @@ export function RouteInterceptorBabelPlugin(): PluginObj {
       CallExpression(path) {
         const { node } = path;
         const { callee } = node;
-        if (callee.type === "MemberExpression" && callee.object.name === "location") {
+        if (
+          callee.type === "MemberExpression" &&
+          callee.object.name === "location" &&
+          callee.property.name === "replace"
+        ) {
           callee.object.name = "_location";
         }
       },
