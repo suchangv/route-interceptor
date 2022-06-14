@@ -23,7 +23,7 @@ todo
 const interceptor = create({
   way: ["a", "window.open", "history", "hash", "location"],
   intercept: (path) => {
-    return path.replace("/some", "/other");
+    return path.replace("google.com", "youtube.com");
   },
 });
 
@@ -75,6 +75,10 @@ interceptor.start();
   _location.replace("https://www.google.com");
   ```
 
-  It will register a object _location into window, and transform all your code location to _location, only support intercept location.href and location.replace
+  It will register a object \_location into window, and transform all your code location to \_location, only support intercept location.href and location.replace
 
   > Can't support esbuild-loader, because esbuild transform api don't support plugin.
+
+### intercept
+
+return a new path to jump, or return `false` to stop jump
