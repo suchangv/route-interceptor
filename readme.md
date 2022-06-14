@@ -57,7 +57,7 @@ interceptor.start();
 
 - location
 
-  Because of the origin location object can't be override, if you want to intercept `set location.href` and `location.replace`, You need to use Babel at the same time.
+  Because the origin location object can't be override, if you want to intercept `set location.href` and `location.replace`, You need to use Babel at the same time.
 
   ```javascript
   // .babelrc.js
@@ -66,7 +66,7 @@ interceptor.start();
   };
   ```
 
-  How it work
+  How it works
 
   ```javascript
   location.href = "https://www.google.com";
@@ -78,7 +78,7 @@ interceptor.start();
 
   It will register a object \_location into window, and transform all your code location.href to \_location.href location.replace to \_location.replace, only support intercept location.href and location.replace, don't transform other location property.
 
-  > Can't support esbuild-loader, because esbuild transform api don't support plugin.
+  > Can't support esbuild-loader, because esbuild transform api does't support plugin.
 
 ### intercept
 
