@@ -11,8 +11,8 @@ const originWindowOpen = window.open;
 let isStarted = false;
 
 export function create({
-  way,
-  intercept,
+  way = [],
+  intercept = () => false,
 }: {
   way: Way[];
   intercept: Intercept;
