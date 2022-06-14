@@ -1,6 +1,6 @@
 {
   "name": "@suchangv/route-interceptor",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A front-end generic route interceptor",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -11,6 +11,7 @@
   "scripts": {
     "start": "tsc -w",
     "build": "tsc",
+    "publish": "npm run build && npm publish",
     "demo:cra": "cd demo/cra && npm start"
   },
   "devDependencies": {

@@ -119,8 +119,6 @@ function _history(intercept: Intercept) {
         return;
       }
 
-      console.log(url);
-
       const to = intercept(url.toString());
       if (to === false) {
         return;
@@ -132,6 +130,9 @@ function _history(intercept: Intercept) {
 }
 
 let _nextHash = "";
+/**
+ * intercept hashchange
+ */
 function _hash(intercept: Intercept) {
   window.addEventListener("hashchange", function (event) {
     const url = new URL(event.newURL);
