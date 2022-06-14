@@ -1,7 +1,12 @@
 {
   "name": "@suchangv/route-interceptor",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A front-end generic route interceptor",
+  "homepage": "https://github.com/suchangv/route-interceptor",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/suchangv/route-interceptor"
+  },
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
