@@ -41,46 +41,46 @@ interceptor.start();
 
 ### way
 
-#### - a
+#### a
 
-  Intercept Anchor tag jump, if Anchor tag has click event and called preventDefault, Will not be intercepted.
+Intercept Anchor tag jump, if Anchor tag has click event and called preventDefault, Will not be intercepted.
 
-#### - window.open
+#### window.open
 
-  Intercept window.open
+Intercept window.open
 
-#### - history
+#### history
 
-  Will both intercept history.pushState and history.replaceState
+Will both intercept history.pushState and history.replaceState
 
-#### - hash
+#### hash
 
-  Intercept hash change, such as `location.hash = '#some'`
+Intercept hash change, such as `location.hash = '#some'`
 
-#### - location
+#### location
 
-  Because the origin location object can't be override, if you want to intercept `set location.href` and `location.replace`, You need to use Babel at the same time.
+Because the origin location object can't be override, if you want to intercept `set location.href` and `location.replace`, You need to use Babel at the same time.
 
-  ```javascript
-  // .babelrc.js
-  module.exports = {
-    plugins: ["@suchangv/route-interceptor/plugins/babel"],
-  };
-  ```
+```javascript
+// .babelrc.js
+module.exports = {
+  plugins: ["@suchangv/route-interceptor/plugins/babel"],
+};
+```
 
-  How it works
+How it works
 
-  ```javascript
-  location.href = "https://www.google.com";
-  location.replace("https://www.google.com");
-  // will transform to
-  _location.href = "https://www.google.com";
-  _location.replace("https://www.google.com");
-  ```
+```javascript
+location.href = "https://www.google.com";
+location.replace("https://www.google.com");
+// will transform to
+_location.href = "https://www.google.com";
+_location.replace("https://www.google.com");
+```
 
-  It will register a object \_location into window, and transform all your code location.href to \_location.href location.replace to \_location.replace, only support intercept location.href and location.replace, don't transform other location property.
+It will register a object \_location into window, and transform all your code location.href to \_location.href location.replace to \_location.replace, only support intercept location.href and location.replace, don't transform other location property.
 
-  > Can't support esbuild-loader, because esbuild transform api does't support plugin.
+> Can't support esbuild-loader, because esbuild transform api does't support plugin.
 
 ### intercept
 
