@@ -60,6 +60,7 @@ interceptor.start();
   Because of the origin location object can't be override, if you want to intercept `set location.href` and `location.replace`, you need to use babel plugin do this.
 
   ```javascript
+  // .babelrc.js
   module.exports = {
     plugins: ["@suchangv/route-interceptor/plugins/babel"],
   };
@@ -75,7 +76,7 @@ interceptor.start();
   _location.replace("https://www.google.com");
   ```
 
-  It will register a object \_location into window, and transform all your code location to \_location, only support intercept location.href and location.replace
+  It will register a object \_location into window, and transform all your code location.href to \_location.href location.replace to \_location.replace, only support intercept location.href and location.replace, don't transform other location property.
 
   > Can't support esbuild-loader, because esbuild transform api don't support plugin.
 
