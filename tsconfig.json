@@ -5,7 +5,8 @@
     "module": "ESNext",
     "outDir": "dist",
     "declaration": true,
-    "lib": ["ESNext", "DOM"]
+    "lib": ["ESNext", "DOM"],
+    "moduleResolution": "Node"
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "demo"]

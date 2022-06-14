@@ -36,6 +36,7 @@ export function create({
       _hash(intercept);
     }
     if (way.includes("location")) {
+      window._location = getFakeLocation(intercept);
     }
   };
 
@@ -153,4 +154,26 @@ function _hash(intercept: Intercept) {
 
     this.location.hash = _nextHash;
   });
+}
+
+/**
+ * get fake location object
+ */
+function getFakeLocation(intercept: Intercept): Pick<Location, "href" | "replace"> {
+  return {
+    set href(value: string) {
+      const to = intercept(value);
+      if (to === false) {
+        return;
+      }
+      location.href = to;
+    },
+    replace: (url: string | URL) => {
+      const to = intercept(url.toString());
+      if (to === false) {
+        return;
+      }
+      location.replace(to);
+    },
+  };
 }

@@ -15,7 +15,12 @@
     "demo:cra": "cd demo/cra && npm start"
   },
   "devDependencies": {
+    "@babel/core": "^7.18.5",
+    "@types/babel__core": "^7.1.19",
     "typescript": "^4.7.3"
+  },
+  "peerDependencies": {
+    "@babel/core": "^7.0.0-0"
   },
   "keywords": [
     "React",
