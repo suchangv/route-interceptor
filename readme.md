@@ -74,11 +74,11 @@ How it works
 location.href = "https://www.google.com";
 location.replace("https://www.google.com");
 // will transform to
-_location.href = "https://www.google.com";
-_location.replace("https://www.google.com");
+$location.href = "https://www.google.com";
+$location.replace("https://www.google.com");
 ```
 
-It will register a object \_location into window, and transform all your code location.href to \_location.href location.replace to \_location.replace, only support intercept location.href and location.replace, don't transform other location property.
+It will register a object \$location into window, and transform all your code location.href to \$location.href location.replace to \$location.replace, only support intercept location.href and location.replace, don't transform other location property.
 
 > Can't support esbuild-loader, because esbuild transform api does't support plugin.
 

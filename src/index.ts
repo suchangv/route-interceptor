@@ -36,7 +36,7 @@ export function create({
       _hash(intercept);
     }
     if (way.includes("location")) {
-      window._location = getFakeLocation(intercept);
+      window.$location = getFakeLocation(intercept);
     }
   };
 

@@ -3,7 +3,7 @@ function RouteInterceptorBabelPlugin() {
     name: "route-interceptor-babel-plugin",
 
     visitor: {
-      // replace location.href to _location.href
+      // replace location.href to $location.href
       AssignmentExpression(path) {
         const { node } = path;
         const { left } = node;
@@ -12,10 +12,10 @@ function RouteInterceptorBabelPlugin() {
           left.object.name === "location" &&
           left.property.name === "href"
         ) {
-          left.object.name = "_location";
+          left.object.name = "$location";
         }
       },
-      // replace location.replace to _location.replace
+      // replace location.replace to $location.replace
       CallExpression(path) {
         const { node } = path;
         const { callee } = node;
@@ -24,7 +24,7 @@ function RouteInterceptorBabelPlugin() {
           callee.object.name === "location" &&
           callee.property.name === "replace"
         ) {
-          callee.object.name = "_location";
+          callee.object.name = "$location";
         }
       },
     },
