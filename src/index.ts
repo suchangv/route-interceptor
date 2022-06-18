@@ -59,8 +59,12 @@ function _a(intercept: Intercept) {
           path.push(currentElem);
           currentElem = currentElem.parentElement;
         }
-        if (path.indexOf(window) === -1 && path.indexOf(document) === -1) path.push(document);
-        if (path.indexOf(window) === -1) path.push(window);
+        if (path.indexOf(window) === -1 && path.indexOf(document) === -1) {
+          path.push(document);
+        }
+        if (path.indexOf(window) === -1) {
+          path.push(window);
+        }
         return path;
       },
     });
@@ -75,13 +79,14 @@ function _a(intercept: Intercept) {
 
     for (const item of path) {
       if (item instanceof HTMLAnchorElement) {
+        event.preventDefault();
+
         const to = intercept(item.href);
         if (to === false) {
           return;
         }
 
-        event.preventDefault();
-        return originWindowOpen.call(window, to, item.target);
+        return originWindowOpen.call(window, to, item.target || "_self");
       }
     }
   });
@@ -91,7 +96,11 @@ function _a(intercept: Intercept) {
  * intercept window.open
  */
 function _windowOpen(intercept: Intercept) {
-  window.open = (url?: string | URL, target?: string, features?: string): WindowProxy | null => {
+  window.open = (
+    url?: string | URL,
+    target?: string,
+    features?: string
+  ): WindowProxy | null => {
     const path = url?.toString();
     if (path === undefined) {
       return null;
@@ -115,7 +124,11 @@ function _history(intercept: Intercept) {
 
     const originFunc = history[funcNameWithType];
 
-    history[funcNameWithType] = (data: any, unused: string, url?: string | URL | null) => {
+    history[funcNameWithType] = (
+      data: any,
+      unused: string,
+      url?: string | URL | null
+    ) => {
       if (url === undefined || url === null) {
         return;
       }
@@ -159,7 +172,9 @@ function _hash(intercept: Intercept) {
 /**
  * get fake location object
  */
-function getFakeLocation(intercept: Intercept): Pick<Location, "href" | "replace"> {
+function getFakeLocation(
+  intercept: Intercept
+): Pick<Location, "href" | "replace"> {
   return {
     set href(value: string) {
       const to = intercept(value);
