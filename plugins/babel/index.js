@@ -1,7 +1,4 @@
-// @ts-nocheck
-import { PluginObj } from "@babel/core";
-
-export function RouteInterceptorBabelPlugin(): PluginObj {
+function RouteInterceptorBabelPlugin() {
   return {
     name: "route-interceptor-babel-plugin",
 
@@ -34,4 +31,4 @@ export function RouteInterceptorBabelPlugin(): PluginObj {
   };
 }
 
-export default RouteInterceptorBabelPlugin;
+module.exports = RouteInterceptorBabelPlugin;
