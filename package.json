@@ -7,21 +7,22 @@
     "type": "git",
     "url": "https://github.com/suchangv/route-interceptor"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "dist/route-interceptor.js",
+  "module": "dist/route-interceptor.esm.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "start": "tsc -w",
-    "build": "tsc",
-    "publish": "npm run build && npm publish",
+    "build": "rollup -c rollup.config.js",
     "demo:cra": "cd demo/cra && npm start"
   },
   "devDependencies": {
     "@babel/core": "^7.18.5",
+    "@rollup/plugin-typescript": "^8.3.3",
     "@types/babel__core": "^7.1.19",
+    "rollup": "^2.75.6",
+    "tslib": "^2.4.0",
     "typescript": "^4.7.3"
   },
   "peerDependencies": {

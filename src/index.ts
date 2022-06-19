@@ -81,7 +81,7 @@ function _windowOpen(intercept: Intercept) {
     target?: string,
     features?: string
   ): WindowProxy | null => {
-    const path = url?.toString();
+    const path = url ? url.toString() : undefined;
     if (path === undefined) {
       return null;
     }
