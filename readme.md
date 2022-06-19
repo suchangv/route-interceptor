@@ -3,7 +3,6 @@
 ## Introduction
 
 This package can intercept front-end route jumps, Does not depend on any framework, So you can use it in React, Vue, etc.
-for example, intercept jump `https://wwww.google.com/` to `https://www.youtube.com`
 
 ## Online Demo
 
@@ -25,7 +24,7 @@ import { create } from "route-interceptor";
 const interceptor = create({
   way: ["a", "window.open", "history", "hash", "location"],
   intercept: (path) => {
-    return path.replace("google.com", "youtube.com");
+    return path.replace("/bbb", "/ccc");
   },
 });
 
@@ -51,7 +50,7 @@ Intercept window.open
 
 #### history
 
-Will both intercept history.pushState and history.replaceState
+Will intercept both history.pushState and history.replaceState
 
 #### hash
 
@@ -59,8 +58,17 @@ Intercept hash change, such as `location.hash = '#some'`
 
 #### location
 
-Because the origin location object can't be override, if you want to intercept `set location.href` and `location.replace`, You need to use Babel at the same time.
+Because the origin location object can't be override, intercept `set location.href` and `location.replace`, You need to use Babel at the same time or use global object `$location` to jump.
 
+This is type declaration for `$location`.
+
+```typescript
+interface Window {
+  $location: Pick<Location, "href" | "replace">;
+}
+```
+
+Use babel plugin.
 ```javascript
 // .babelrc.js
 module.exports = {
@@ -78,7 +86,7 @@ $location.href = "https://www.google.com";
 $location.replace("https://www.google.com");
 ```
 
-It will register a object \$location into window, and transform all your code location.href to \$location.href location.replace to \$location.replace, only support intercept location.href and location.replace, don't transform other location property.
+Only `location.href` and `location.replace` will be transformed.
 
 > Can't support esbuild-loader, because esbuild transform api does't support plugin.
 
