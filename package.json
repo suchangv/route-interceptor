@@ -1,6 +1,6 @@
 {
   "name": "route-interceptor",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "A front-end generic route interceptor",
   "homepage": "https://github.com/suchangv/route-interceptor",
   "repository": {
