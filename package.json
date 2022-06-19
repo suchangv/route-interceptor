@@ -1,5 +1,5 @@
 {
-  "name": "@suchangv/route-interceptor",
+  "name": "route-interceptor",
   "version": "0.0.9",
   "description": "A front-end generic route interceptor",
   "homepage": "https://github.com/suchangv/route-interceptor",

@@ -1,6 +1,6 @@
 /* eslint-disable no-restricted-globals */
 import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
-import { create } from "@suchangv/route-interceptor";
+import { create } from "route-interceptor";
 
 const interceptor = create({
   way: ["a", "hash", "history", "window.open", "location"],
@@ -79,7 +79,7 @@ export const App = () => (
 //   Route,
 //   Link,
 // } from "react-router-dom";
-// import { create } from "@suchangv/route-interceptor";
+// import { create } from "route-interceptor";
 
 // const interceptor = create({
 //   way: ["a", "hash", "history", "window.open", "location"],

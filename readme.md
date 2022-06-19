@@ -14,13 +14,13 @@ todo
 ### 1. Installation
 
 ```shell
-  npm i @suchangv/route-interceptor --save
+  npm i route-interceptor --save
 ```
 
 ### 2. Add this code where you like
 
 ```javascript
-import { create } from "@suchangv/route-interceptor";
+import { create } from "route-interceptor";
 
 const interceptor = create({
   way: ["a", "window.open", "history", "hash", "location"],
@@ -64,7 +64,7 @@ Because the origin location object can't be override, if you want to intercept `
 ```javascript
 // .babelrc.js
 module.exports = {
-  plugins: ["@suchangv/route-interceptor/plugins/babel"],
+  plugins: ["route-interceptor/plugins/babel"],
 };
 ```
 
