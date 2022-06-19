@@ -7,8 +7,8 @@
     "type": "git",
     "url": "https://github.com/suchangv/route-interceptor"
   },
-  "main": "dist/route-interceptor.js",
-  "module": "dist/route-interceptor.esm.js",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
