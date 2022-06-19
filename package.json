@@ -1,6 +1,6 @@
 {
   "name": "route-interceptor",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A front-end generic route interceptor",
   "homepage": "https://github.com/suchangv/route-interceptor",
   "repository": {
@@ -11,7 +11,8 @@
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "plugins"
   ],
   "scripts": {
     "build": "rollup -c rollup.config.js",
