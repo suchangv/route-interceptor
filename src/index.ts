@@ -49,29 +49,9 @@ export function create({
  * intercept all Anchor tag
  */
 function _a(intercept: Intercept) {
-  // Mouse Event path polyfill
-  if (!("path" in Event.prototype))
-    Object.defineProperty(Event.prototype, "path", {
-      get: function () {
-        const path = [];
-        let currentElem = this.target;
-        while (currentElem) {
-          path.push(currentElem);
-          currentElem = currentElem.parentElement;
-        }
-        if (path.indexOf(window) === -1 && path.indexOf(document) === -1) {
-          path.push(document);
-        }
-        if (path.indexOf(window) === -1) {
-          path.push(window);
-        }
-        return path;
-      },
-    });
-
   document.addEventListener("click", function (event) {
-    const path: HTMLElement[] | undefined = (event as any).path;
-    if (path === undefined) return;
+    const path: HTMLElement[] =
+      (event as any).path || (event.composedPath && event.composedPath()) || [];
 
     if (event.defaultPrevented) {
       return;
