@@ -14,7 +14,7 @@ todo
 ### 1. Installation
 
 ```shell
-  npm i route-interceptor --save
+  npm i route-interceptor
 ```
 
 ### 2. Add this code where you like
